@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 # soup = BeautifulSoup(res.content, "html.parser")
 
 # testing
-res = open("sample.html", "r", encoding="utf8").read()
+res = open("./sample/sample.html", "r", encoding="utf8").read()
 soup = BeautifulSoup(res, "html.parser")
 
 f = soup.find_all("section", "volume-list at-series basic-section volume-mobile gradual-mobile")
