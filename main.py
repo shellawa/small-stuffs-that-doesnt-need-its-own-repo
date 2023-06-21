@@ -78,7 +78,7 @@ for volume in volume_list:
     margin-left: 0.00em;
     margin-right: 0.00em;
     text-indent: 0.00em;
-    line-height: normal;   
+    line-height: normal;
 }
 
 .subtitle {
