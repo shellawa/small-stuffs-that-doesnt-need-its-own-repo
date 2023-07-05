@@ -5,9 +5,7 @@ from bs4 import BeautifulSoup
 from ebooklib import epub
 from pathlib import Path
 
-novel_link = inquirer.prompt(
-    [inquirer.Text("novel_link", message="Nhập link của novel (Ctrl + Shift + V để dán link)")]
-)["novel_link"]
+novel_link = input("Nhập link của novel (Ctrl + Shift + V để dán link): ")
 
 res = requests.get(novel_link)
 
