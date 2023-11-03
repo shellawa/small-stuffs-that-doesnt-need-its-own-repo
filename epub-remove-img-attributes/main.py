@@ -22,13 +22,12 @@ for chapter in os.listdir(folder + "/EPUB/"):
         file.write(str(soup))
 
 
-def zipdir(path, ziph):
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            ziph.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.join(path, "..")))
+with zipfile.ZipFile("modified_" + file_name, "w", zipfile.ZIP_DEFLATED) as zip_ref:
+    for folder_name, subfolders, filenames in os.walk(folder):
+        for filename in filenames:
+            file_path = os.path.join(folder_name, filename)
+            zip_ref.write(file_path, arcname=os.path.relpath(file_path, folder))
 
-
-with zipfile.ZipFile("modified_" + file_name, "w", zipfile.ZIP_DEFLATED) as zipf:
-    zipdir(folder, zipf)
+zip_ref.close()
 
 shutil.rmtree(folder)
